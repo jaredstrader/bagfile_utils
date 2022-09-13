@@ -1,0 +1,10 @@
+<launch>
+    <arg name="bagfile_in"/>
+    <arg name="rgb_topic"/>
+
+    <node pkg="rosbag_utils" type="decompress" name="decompressor" output="screen">
+        <param name="bagfile_in"  value="$(arg bagfile_in)"/>
+        <param name="bagfile_out" value="$(find rosbag_utils)/bags/output.bag"/>
+        <param name="rgb_topic"   value="$(arg rgb_topic)"/>
+    </node>
+</launch>
